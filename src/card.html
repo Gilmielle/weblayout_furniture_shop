@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SitDownPls | Диван тканевый прямой “D-31”</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="preload" href="fonts/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="choices.min.css">
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+  <link rel="stylesheet" href="style-card.css">
+
+  <script defer src="choices.min.js"></script>
+  <script defer src="swiper-bundle.min.js"></script>
+  <script defer src="inputmask.min.js"></script>
+  <script defer src="just-validate.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body class="page">
+  <header class="page__header header">
+    <div class="container">
+      <div class="header__region-select region-select">
+        <span class="region-select__text">Ваш регион:</span>
+        <select class="region-select__select" name="region-select" id="region-select">
+          <option class="region-select__option" value="Москва" selected hidden>Москва</option>
+          <option class="region-select__option" value="Казань">Казань</option>
+          <option class="region-select__option" value="Уфа">Уфа</option>
+          <option class="region-select__option" value="Пермь">Пермь</option>
+        </select>
+      </div>
+      <a class="header__phone" href="tel:+74958854547">
+        <svg class="header__phone-icon">
+          <use xlink:href="images/sprite.svg#phone"></use>
+        </svg>
+        <span>+7 (495) 885-45-47</span>
+      </a>
+      <ul class="header__service-navigation service-navigation">
+        <li class="service-navigation__item">
+          <a href="#" class="service-navigation__link">О компании</a>
+        </li>
+        <li class="service-navigation__item">
+          <a href="#" class="service-navigation__link">Гарантия и возврат</a>
+        </li>
+        <li class="service-navigation__item">
+          <a href="#" class="service-navigation__link">Корпоративным клиентам</a>
+        </li>
+        <li class="service-navigation__item">
+          <a href="#" class="service-navigation__link">Дизайн-решение</a>
+        </li>
+      </ul>
+      <a class="header__logo logo" href="index.html">
+        <img class="logo__img" src="images/logo.svg" alt="Логотип">
+      </a>
+      <nav class="header__main-mavigation main-navigation">
+        <button class="main-navigation__burger btn burger" type="button" id="burger" aria-label="Бургер-меню">
+          <svg class="burger__icon">
+            <use xlink:href="images/sprite.svg#burger"></use>
+          </svg>
+        </button>
+        <div class="main-navigation__burger-menu burger-menu" id="menu">
+          <button class="burger-menu__burger-close btn burger-close" type="button" id="burger-close" aria-label="Закрыть бургер-меню">
+            <svg class="burger-close__icon">
+              <use xlink:href="images/sprite.svg#close"></use>
+            </svg>
+          </button>
+          <ul class="burger-menu__site-navigation site-navigation">
+            <li class="site-navigation__item">
+              <a href="catalog.html" class="site-navigation__link">Каталог</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="site-navigation__link">Магазины</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="site-navigation__link">Шоу-рум</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="site-navigation__link">Доставка и оплата</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="site-navigation__link">Дисконт</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="site-navigation__link">Контакты</a>
+            </li>
+          </ul>
+          <ul class="burger-menu__service-navigation service-navigation">
+            <li class="service-navigation__item">
+              <a href="#" class="service-navigation__link">О компании</a>
+            </li>
+            <li class="service-navigation__item">
+              <a href="#" class="service-navigation__link">Гарантия и возврат</a>
+            </li>
+            <li class="service-navigation__item">
+              <a href="#" class="service-navigation__link">Корпоративным клиентам</a>
+            </li>
+            <li class="service-navigation__item">
+              <a href="#" class="service-navigation__link">Дизайн-решение</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header__search">
+        <form class="header__search-form site-search" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+          <div class="site-search__input-wrapper">
+            <input class="site-search__input input" type="text" name="site-search-input" id="site-search-input" placeholder="Я хочу купить...">
+            <svg class="site-search__icon">
+              <use xlink:href="images/sprite.svg#search"></use>
+            </svg>
+            <button class="site-search__btn btn arrow" aria-label="Начать поиск">
+              <svg class="arrow__icon" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+                <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <select class="site-search__select" name="site-search-select" id="site-search-select">
+            <option class="site-search__option" value="Категория" selected hidden>Категория</option>
+            <option class="site-search__option" value="Диваны">Диваны</option>
+            <option class="site-search__option" value="Комоды">Комоды</option>
+            <option class="site-search__option" value="Кресла">Кресла</option>
+            <option class="site-search__option" value="Стулья">Стулья</option>
+            <option class="site-search__option" value="Пуфы">Пуфы</option>
+            <option class="site-search__option" value="Столы">Столы</option>
+            <option class="site-search__option" value="Кровати">Кровати</option>
+            <option class="site-search__option" value="Аксессуары">Аксессуары</option>
+            <option class="site-search__option" value="Тумбы">Тумбы</option>
+          </select>
+        </form>
+      </div>
+      <ul class="header__user-navigation user-navigation">
+        <li class="user-navigation__item">
+          <a href="#" class="user-navigation__link user-navigation__link_profile" aria-label="Войти в личный кабинет">
+            <svg class="user-navigation__icon">
+              <use xlink:href="images/sprite.svg#user"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="user-navigation__item">
+          <a href="#" class="user-navigation__link user-navigation__link_cart notification-badge" aria-label="Войти в корзину">
+            <svg class="user-navigation__icon">
+              <use xlink:href="images/sprite.svg#cart"></use>
+            </svg>
+            <span class="notification-badge__counter">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="page__main">
+    <div class="container">
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="index.html">Главная</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="#">Диваны</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="catalog.html">Прямые диваны</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link breadcrumbs__link_active" href="#">D-31</a>
+        </li>
+      </ul>
+
+      <article class="product-card card">
+        <div class="product-card__summary card__summary">
+          <h1 class="product-card__title">Диван тканевый прямой “D-31”</h1>
+          <p class="product-card__subtitle">Мини 120 см без ящика Stark синий (Рогожка)</p>
+          <div class="product-card__rating rating">
+            <svg class="rating__img">
+              <use xlink:href="images/sprite.svg#rating"></use>
+            </svg>
+            <span class="rating__text">4,8</span>
+          </div>
+          <p class="product-card__price">28 490 руб</p>
+          <button class="product-card__btn btn btn_primary" id="order-modal-open" type="button">Купить в один клик</button>
+          <a class="product-card__cart-link" href="#">+ Добавить в корзину</a>
+        </div>
+        <div class="product-card__img-list card__img-list">
+          <picture  class="product-card__img-item product-card__img-item_active" data-img="product-card-1">
+            <source srcset="images/product-card/product-card-1.webp" type="image/webp">
+            <img src="images/product-card/product-card-1.png" alt="Диван тканевый прямой “D-31” - фото 1">
+          </picture>
+          <picture  class="product-card__img-item" data-img="product-card-2">
+            <source srcset="images/product-card/product-card-2.webp" type="image/webp">
+            <img src="images/product-card/product-card-2.png" alt="Диван тканевый прямой “D-31” - фото 2">
+          </picture>
+          <picture  class="product-card__img-item" data-img="product-card-3">
+            <source srcset="images/product-card/product-card-3.webp" type="image/webp">
+            <img src="images/product-card/product-card-3.png" alt="Диван тканевый прямой “D-31” - фото 3">
+          </picture>
+          <picture  class="product-card__img-item" data-img="product-card-4">
+            <source srcset="images/product-card/product-card-4.webp" type="image/webp">
+            <img src="images/product-card/product-card-4.png" alt="Диван тканевый прямой “D-31” - фото 4">
+          </picture>
+          <picture  class="product-card__img-item" data-img="product-card-5">
+            <source srcset="images/product-card/product-card-5.webp" type="image/webp">
+            <img src="images/product-card/product-card-5.png" alt="Диван тканевый прямой “D-31” - фото 5">
+          </picture>
+        </div>
+        <div class="product-card__thumbs card__thumbs thumbs-swiper swiper" id="thumbs-swiper">
+          <div class="thumbs-swiper__wrapper swiper-wrapper">
+            <div class="thumbs-swiper__slide swiper-slide">
+              <picture  class="thumbs-swiper__img">
+                <source srcset="images/product-card/product-card-2.webp" type="image/webp">
+                <img src="images/product-card/product-card-2.png" alt="Диван тканевый прямой “D-31” - фото 2" data-thumb="product-card-2">
+              </picture>
+            </div>
+            <div class="thumbs-swiper__slide swiper-slide">
+              <picture  class="thumbs-swiper__img">
+                <source srcset="images/product-card/product-card-3.webp" type="image/webp">
+                <img src="images/product-card/product-card-3.png" alt="Диван тканевый прямой “D-31” - фото 3" data-thumb="product-card-3">
+              </picture>
+            </div>
+            <div class="thumbs-swiper__slide swiper-slide">
+              <picture  class="thumbs-swiper__img">
+                <source srcset="images/product-card/product-card-4.webp" type="image/webp">
+                <img src="images/product-card/product-card-4.png" alt="Диван тканевый прямой “D-31” - фото 4" data-thumb="product-card-4">
+              </picture>
+            </div>
+            <div class="thumbs-swiper__slide swiper-slide">
+              <picture  class="thumbs-swiper__img">
+                <source srcset="images/product-card/product-card-5.webp" type="image/webp">
+                <img src="images/product-card/product-card-5.png" alt="Диван тканевый прямой “D-31” - фото 5" data-thumb="product-card-5">
+              </picture>
+            </div>
+            <div class="thumbs-swiper__slide swiper-slide">
+              <picture  class="thumbs-swiper__img">
+                <source srcset="images/product-card/product-card-1.webp" type="image/webp">
+                <img src="images/product-card/product-card-1.png" alt="Диван тканевый прямой “D-31” - фото 1" data-thumb="product-card-1">
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="product-card__description card__description">
+          <h3 class="product-card__description-title">Опорный механизм</h3>
+          <p class="product-card__description-text">Опорный механизм напоминает пантограф, к которому добавили дополнительную секцию. У опорного дивана сиденье «выпрыгивает» вперёд и вытаскивает вторую часть спального места. Заключительный штрих — опустить спинку.</p>
+          <p class="product-card__description-text">Этот механизм не портит пол и не боится ковров. Требуется чуть больше силы, чтобы разложить диван, но подросток справится.</p>
+        </div>
+        <div class="product-card__scheme-list card__scheme-list">
+          <picture class="product-card__scheme">
+            <source srcset="images/product-card/product-card-6.webp" type="image/webp">
+            <img src="images/product-card/product-card-6.png" alt="Диван в разложенном виде">
+          </picture>
+          <picture class="product-card__scheme">
+            <source srcset="images/product-card/product-card-7.webp" type="image/webp">
+            <img src="images/product-card/product-card-7.png" alt="Диван в разложенном виде">
+          </picture>
+        </div>
+        <div class="product-card__params card__params product-params">
+          <dl class="product-params__list">
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Гарантия</dt>
+              <dd class="product-params__item-value">18 месяцев</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Артикул</dt>
+              <dd class="product-params__item-value">AAA41269004</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Длина</dt>
+              <dd class="product-params__item-value">163 см</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Высота</dt>
+              <dd class="product-params__item-value">90 см</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Глубина</dt>
+              <dd class="product-params__item-value">108 см</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Спальное место</dt>
+              <dd class="product-params__item-value">200 см х 125 см</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Высота посадки</dt>
+              <dd class="product-params__item-value">45 см</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Механизм</dt>
+              <dd class="product-params__item-value">Опорный</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Тип обивки</dt>
+              <dd class="product-params__item-value">Рогожка</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Цвет</dt>
+              <dd class="product-params__item-value">Синий</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Наполнитель</dt>
+              <dd class="product-params__item-value">Независимый пружинный блок</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Материал каркаса</dt>
+              <dd class="product-params__item-value">Металл. рама с дерев. латами</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Количество мест</dt>
+              <dd class="product-params__item-value">Двухместные</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Категория</dt>
+              <dd class="product-params__item-value">Прямые тканевые диваны</dd>
+            </div>
+            <div class="product-params__item">
+              <dt class="product-params__item-name">Возврат</dt>
+              <dd class="product-params__item-value">Условия</dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+      <section class="similar-products">
+        <div class="similar-products__swiper swiper" id="similar-products-swiper">
+          <h2 class="similar-products__title">Похожие товары</h2>
+          <ul class="similar-products__swiper-wrapper swiper-wrapper">
+            <li class="similar-products__swiper-slide swiper-slide">
+              <article class="product-preview">
+                <h3 class="product-preview__title">
+                  <a href="#" class="product-preview__link">Диван велюровый “R-85”</a>
+                </h3>
+                <picture class="product-preview__img">
+                  <source srcset="images/catalog/catalog-16.webp" type="image/webp">
+                  <img src="images/catalog/catalog-16.png" alt="Диван велюровый “R-85”">
+                </picture>
+                <div class="product-preview__rating rating">
+                  <svg class="rating__img">
+                    <use xlink:href="images/sprite.svg#rating"></use>
+                  </svg>
+                  <span class="rating__text">4,5</span>
+                </div>
+                <p class="product-preview__price">34 990 руб</p>
+                <button class="product-preview__btn btn btn_secondary" type="button">Купить</button>
+              </article>
+            </li>
+            <li class="similar-products__swiper-slide swiper-slide">
+              <article class="product-preview">
+                <h3 class="product-preview__title">
+                  <a href="#" class="product-preview__link">Диван флоковый “H-58”</a>
+                </h3>
+                <picture class="product-preview__img">
+                  <source srcset="images/catalog/catalog-11.webp" type="image/webp">
+                  <img src="images/catalog/catalog-11.png" alt="Диван флоковый “H-58”">
+                </picture>
+                <div class="product-preview__rating rating">
+                  <svg class="rating__img">
+                    <use xlink:href="images/sprite.svg#rating"></use>
+                  </svg>
+                  <span class="rating__text">4,6</span>
+                </div>
+                <p class="product-preview__price">23 990 руб</p>
+                <button class="product-preview__btn btn btn_secondary" type="button">Купить</button>
+              </article>
+            </li>
+            <li class="similar-products__swiper-slide swiper-slide">
+              <article class="product-preview">
+                <h3 class="product-preview__title">
+                  <a href="#" class="product-preview__link">Диван велюровый “S-44”</a>
+                </h3>
+                <picture class="product-preview__img">
+                  <source srcset="images/catalog/catalog-17.webp" type="image/webp">
+                  <img src="images/catalog/catalog-17.png" alt="Диван велюровый “S-44”">
+                </picture>
+                <div class="product-preview__rating rating">
+                  <svg class="rating__img">
+                    <use xlink:href="images/sprite.svg#rating"></use>
+                  </svg>
+                  <span class="rating__text">4,5</span>
+                </div>
+                <p class="product-preview__price">19 990 руб</p>
+                <button class="product-preview__btn btn btn_secondary" type="button">Купить</button>
+              </article>
+            </li>
+            <li class="similar-products__swiper-slide swiper-slide">
+              <article class="product-preview">
+                <h3 class="product-preview__title">
+                  <a href="#" class="product-preview__link">Диван шиниловый “V-43”</a>
+                </h3>
+                <picture class="product-preview__img">
+                  <source srcset="images/catalog/catalog-7.webp" type="image/webp">
+                  <img src="images/catalog/catalog-7.png" alt="Диван шиниловый “V-43”">
+                </picture>
+                <div class="product-preview__rating rating">
+                  <svg class="rating__img">
+                    <use xlink:href="images/sprite.svg#rating"></use>
+                  </svg>
+                  <span class="rating__text">4,8</span>
+                </div>
+                <p class="product-preview__price">19 990 руб</p>
+                <button class="product-preview__btn btn btn_secondary" type="button">Купить</button>
+              </article>
+            </li>
+            <li class="similar-products__swiper-slide swiper-slide">
+              <article class="product-preview">
+                <h3 class="product-preview__title">
+                  <a href="#" class="product-preview__link">Диван из шинила “С-42”</a>
+                </h3>
+                <picture class="product-preview__img">
+                  <source srcset="images/catalog/catalog-13.webp" type="image/webp">
+                  <img src="images/catalog/catalog-13.png" alt="Диван из шинила “С-42”">
+                </picture>
+                <div class="product-preview__rating rating">
+                  <svg class="rating__img">
+                    <use xlink:href="images/sprite.svg#rating"></use>
+                  </svg>
+                  <span class="rating__text">4,6</span>
+                </div>
+                <p class="product-preview__price">18 990 руб</p>
+                <button class="product-preview__btn btn btn_secondary" type="button">Купить</button>
+              </article>
+            </li>
+            <li class="similar-products__swiper-slide swiper-slide">
+              <article class="product-preview">
+                <h3 class="product-preview__title">
+                  <a href="#" class="product-preview__link">Диван флоковый “F-41”</a>
+                </h3>
+                <picture class="product-preview__img">
+                  <source srcset="images/catalog/catalog-15.webp" type="image/webp">
+                  <img src="images/catalog/catalog-15.png" alt="Диван флоковый “F-41”">
+                </picture>
+                <div class="product-preview__rating rating">
+                  <svg class="rating__img">
+                    <use xlink:href="images/sprite.svg#rating"></use>
+                  </svg>
+                  <span class="rating__text">4,5</span>
+                </div>
+                <p class="product-preview__price">17 990 руб</p>
+                <button class="product-preview__btn btn btn_secondary" type="button">Купить</button>
+              </article>
+            </li>
+            <li class="similar-products__swiper-slide swiper-slide">
+              <article class="product-preview">
+                <h3 class="product-preview__title">
+                  <a href="#" class="product-preview__link">Диван флоковый “H-64”</a>
+                </h3>
+                <picture class="product-preview__img">
+                  <source srcset="images/catalog/catalog-10.webp" type="image/webp">
+                  <img src="images/catalog/catalog-10.png" alt="Диван флоковый “H-64”">
+                </picture>
+                <div class="product-preview__rating rating">
+                  <svg class="rating__img">
+                    <use xlink:href="images/sprite.svg#rating"></use>
+                  </svg>
+                  <span class="rating__text">4,6</span>
+                </div>
+                <p class="product-preview__price">25 990 руб</p>
+                <button class="product-preview__btn btn btn_secondary" type="button">Купить</button>
+              </article>
+            </li>
+            <li class="similar-products__swiper-slide swiper-slide">
+              <article class="product-preview">
+                <h3 class="product-preview__title">
+                  <a href="#" class="product-preview__link">Диван из кожзама “R-43”</a>
+                </h3>
+                <picture class="product-preview__img">
+                  <source srcset="images/catalog/catalog-12.webp" type="image/webp">
+                  <img src="images/catalog/catalog-12.png" alt="Диван из кожзама “R-43”">
+                </picture>
+                <div class="product-preview__rating rating">
+                  <svg class="rating__img">
+                    <use xlink:href="images/sprite.svg#rating"></use>
+                  </svg>
+                  <span class="rating__text">4,6</span>
+                </div>
+                <p class="product-preview__price">33 990 руб</p>
+                <button class="product-preview__btn btn btn_secondary" type="button">Купить</button>
+              </article>
+            </li>
+          </ul>
+          <div class="similar-products__navigation swiper-navigation-buttons">
+            <div class="similar-products__button-prev swiper-button-prev arrow">
+              <span class="visually-hidden">Предыдущий слайд</span>
+              <svg class="arrow__icon" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+                <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="similar-products__button-next swiper-button-next arrow">
+              <span class="visually-hidden">Следующий слайд</span>
+              <svg class="arrow__icon" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+                <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="modal">
+      <div class="modal__table">
+        <div class="modal__cell">
+          <div class="modal__container">
+            <button class="modal__close-btn modal-close-btn btn" id="feedback-modal-close" type="button" aria-label="Закрыть окно">
+              <svg class="modal-close-btn__icon">
+                <use xlink:href="images/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <div class="modal__content modal-form" id="modal-form">
+              <h3 class="modal-form__title">Купить в один клик</h3>
+              <p class="modal-form__text">
+                Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
+              </p>
+              <form class="modal-form__form feedback-form" id="order-form" action="https://jsonplaceholder.typicode.com/posts" method="post">
+                <label class="feedback-form__label validate-label modal-form__label">
+                  <span class="visually-hidden">Введите имя</span>
+                  <input class="feedback-form__input input modal-form__input" type="text" name="feedback-form-name" id="feedback-form-name" data-validate-field="name" placeholder="Как вас зовут?">
+                </label>
+                <label class="feedback-form__label validate-label modal-form__label">
+                  <span class="visually-hidden">Введите телефон</span>
+                  <input class="feedback-form__input input modal-form__input" type="tel" name="feedback-form-tel" id="feedback-form-tel" data-validate-field="phone" placeholder="Ваш телефон">
+                </label>
+                <button class="feedback-form__btn btn btn_primary modal-form__btn" type="submit">Отправить</button>
+                <label class="feedback-form__checkbox checkbox modal-form__checkbox">
+                  <input class="visually-hidden" type="checkbox" name="user-agreement" id="user-agreement" checked>
+                  <span class="checkbox__label">Принимаю 
+                    <a class="feedback-form__link" href="#">пользовательское соглашение</a>
+                  </span>
+                </label>
+              </form>
+            </div>
+            <div class="modal__content modal__content_background" id="modal-form-success">
+              <p class="modal__feedback-text">Спасибо, мы вам перезвоним!</p>
+            </div>
+            <div class="modal__content modal__content_images product-card product-card_modal-content" id="modal-images">
+              <div class="product-card__img-list">
+                <picture  class="product-card__img-item product-card__img-item_active" data-img="product-card-1">
+                  <source srcset="images/product-card/product-card-1.webp" type="image/webp">
+                  <img src="images/product-card/product-card-1.png" alt="Диван тканевый прямой “D-31” - фото 1">
+                </picture>
+                <picture  class="product-card__img-item" data-img="product-card-2">
+                  <source srcset="images/product-card/product-card-2.webp" type="image/webp">
+                  <img src="images/product-card/product-card-2.png" alt="Диван тканевый прямой “D-31” - фото 2">
+                </picture>
+                <picture  class="product-card__img-item" data-img="product-card-3">
+                  <source srcset="images/product-card/product-card-3.webp" type="image/webp">
+                  <img src="images/product-card/product-card-3.png" alt="Диван тканевый прямой “D-31” - фото 3">
+                </picture>
+                <picture  class="product-card__img-item" data-img="product-card-4">
+                  <source srcset="images/product-card/product-card-4.webp" type="image/webp">
+                  <img src="images/product-card/product-card-4.png" alt="Диван тканевый прямой “D-31” - фото 4">
+                </picture>
+                <picture  class="product-card__img-item" data-img="product-card-5">
+                  <source srcset="images/product-card/product-card-5.webp" type="image/webp">
+                  <img src="images/product-card/product-card-5.png" alt="Диван тканевый прямой “D-31” - фото 5">
+                </picture>
+              </div>
+              <div class="product-card__thumbs thumbs-swiper swiper" id="thumbs-swiper-modal">
+                <div class="thumbs-swiper__wrapper swiper-wrapper">
+                  <div class="thumbs-swiper__slide swiper-slide">
+                    <picture  class="thumbs-swiper__img">
+                      <source srcset="images/product-card/product-card-2.webp" type="image/webp">
+                      <img src="images/product-card/product-card-2.png" alt="Диван тканевый прямой “D-31” - фото 2" data-thumb="product-card-2">
+                    </picture>
+                  </div>
+                  <div class="thumbs-swiper__slide swiper-slide">
+                    <picture  class="thumbs-swiper__img">
+                      <source srcset="images/product-card/product-card-3.webp" type="image/webp">
+                      <img src="images/product-card/product-card-3.png" alt="Диван тканевый прямой “D-31” - фото 3" data-thumb="product-card-3">
+                    </picture>
+                  </div>
+                  <div class="thumbs-swiper__slide swiper-slide">
+                    <picture  class="thumbs-swiper__img">
+                      <source srcset="images/product-card/product-card-4.webp" type="image/webp">
+                      <img src="images/product-card/product-card-4.png" alt="Диван тканевый прямой “D-31” - фото 4" data-thumb="product-card-4">
+                    </picture>
+                  </div>
+                  <div class="thumbs-swiper__slide swiper-slide">
+                    <picture  class="thumbs-swiper__img">
+                      <source srcset="images/product-card/product-card-5.webp" type="image/webp">
+                      <img src="images/product-card/product-card-5.png" alt="Диван тканевый прямой “D-31” - фото 5" data-thumb="product-card-5">
+                    </picture>
+                  </div>
+                  <div class="thumbs-swiper__slide swiper-slide">
+                    <picture  class="thumbs-swiper__img">
+                      <source srcset="images/product-card/product-card-1.webp" type="image/webp">
+                      <img src="images/product-card/product-card-1.png" alt="Диван тканевый прямой “D-31” - фото 1" data-thumb="product-card-1">
+                    </picture>
+                  </div>
+                </div>
+                <div class="thumbs-swiper__navigation swiper-navigation-buttons">
+                  <div class="thumbs-swiper__button-prev swiper-button-prev arrow">
+                    <span class="visually-hidden">Предыдущий слайд</span>
+                    <svg class="arrow__icon" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+                      <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="thumbs-swiper__button-next swiper-button-next arrow">
+                    <span class="visually-hidden">Следующий слайд</span>
+                    <svg class="arrow__icon" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+                      <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page__footer footer">
+    <div class="container">
+      <a class="footer__logo logo" href="index.html">
+        <img class="logo__img" src="images/logo.svg" alt="Логотип">
+      </a>
+      <ul class="footer__socials socials">
+        <li class="socials__item">
+          <a href="#" class="socials__link">
+            <svg class="socials__icon">
+              <use xlink:href="images/sprite.svg#fb"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="#" class="socials__link">
+            <svg class="socials__icon">
+              <use xlink:href="images/sprite.svg#vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="#" class="socials__link">
+            <svg class="socials__icon">
+              <use xlink:href="images/sprite.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <div class="footer__navigation footer-service-navigation">
+        <div class="footer-service-navigation__column">
+          <p class="footer-service-navigation__category">О нас</p>
+          <ul class="footer-service-navigation__list">
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">О компании</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Блог</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-service-navigation__column">
+          <p class="footer-service-navigation__category">Услуги</p>
+          <ul class="footer-service-navigation__list">
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Доставка</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Рассрочка и кредит</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Сборка и установка</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-service-navigation__column">
+          <p class="footer-service-navigation__category">Связь с нами</p>
+          <ul class="footer-service-navigation__list">
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Обратная связь</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-service-navigation__column">
+          <p class="footer-service-navigation__category">Сотрудничество</p>
+          <ul class="footer-service-navigation__list">
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Поставщикам</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Оптовикам</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Карьера</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="footer__copyright">SDP<span>®</span> 2011-2021</p>
+  </footer>
+</body>
+</html>

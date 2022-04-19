@@ -1,0 +1,194 @@
+@import '_variabiles.scss';
+@import '_mixins.scss';
+
+.special-offers {
+  padding-top: 40px;
+  padding-bottom: 68px;
+
+  @media (max-width: 576px) {
+    padding-bottom: 70px;
+  }
+
+  &__container {
+
+    @media (max-width: 576px) {
+      row-gap: 0;
+    }
+  }
+
+  &__title {
+    grid-row: 1 / 2;
+    grid-column: span 6;
+    margin: 0;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    color: $textDark;
+
+    @media (max-width: 768px) {
+      grid-column: span 5;
+    }
+
+    @media (max-width: 700px) {
+      grid-column: span 4;
+    }
+
+    @media (max-width: 576px) {
+      margin-bottom: 26px;
+      font-size: 24px;
+    }
+  }
+
+  &__navigation {
+    grid-row: 1 / 2;
+    grid-column: -3 / -1;
+
+    @media (max-width: 768px) {
+      grid-column: -2 / -1;
+    }
+    
+    @media (max-width: 576px) {
+      grid-column: 1 / -1;
+      grid-row: 3 / 4;
+      justify-content: center;
+    }
+  }
+
+  &__swiper-wrapper {
+    box-sizing: border-box;
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+
+    @media (max-width: 576px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__swiper-slide {
+    width: 296px;
+
+    &_wide {
+      width: 624px;
+    }
+  }
+}
+
+.special-offers-product{
+  position: relative;
+  display: grid;
+  grid-template-areas: 
+    'img img'
+    'title title'
+    'price old-price'
+    'btn btn';
+  align-items: end;
+  grid-template-rows: auto;
+  grid-auto-rows: min-content;
+  min-height: 511px;
+  padding: 30px;
+  background: $background;
+  border-radius: 10px;
+
+  &_wide {
+    grid-template-areas: 
+      'img img img'
+      'title title .'
+      'price old-price scheme'
+      'btn btn scheme';
+    grid-template-columns: auto auto 1fr;
+
+    @media (max-width: 1325px) {
+      grid-template-areas: 
+        'img img'
+        'title title'
+        'price old-price'
+        'btn btn';
+        grid-template-columns: auto auto;
+    }
+  }
+
+  &__img {
+    grid-area: img;
+    display: flex;
+    justify-self: center;
+    margin-bottom: 17px;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 0;
+      margin-top: 25px;
+      align-self: center;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    margin: 0;
+    margin-bottom: 21px;
+    max-width: 222px;
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  &__link {
+    transition: color 0.3s ease-in-out,
+      background-color 0.3s ease-in-out;
+    
+    &:hover {
+      color: $primary;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $primaryLight;
+    }
+    
+    &:active {
+      color: $primaryDark;
+      background-color: transparent;
+    }
+  }
+
+  &__price {
+    grid-area: price;
+    margin: 0;
+    margin-bottom: 23px;
+    font-size: 18px;
+    color: $secondary;
+  }
+
+  &__old-price {
+    grid-area: old-price;
+    margin: 0;
+    margin-bottom: 23px;
+    text-decoration-line: line-through;
+    color: $textLight;
+  }
+
+  &__discount {
+    @include cardLabel;
+    top: 30px;
+    
+    &::after {
+      content: '';
+      left: 82px;
+      top: 0;
+      @include cardFlagEnd;
+    }
+  }
+
+  &__scheme {
+    grid-area: scheme;
+    display: flex;
+    margin-left: auto;
+
+    @media (max-width: 1325px) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    grid-area: btn;
+    padding: 16px 34px;
+    justify-self: flex-start;
+  }
+}

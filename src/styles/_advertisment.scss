@@ -1,0 +1,97 @@
+@import '_variabiles.scss';
+
+.advertisment {
+  height: 600px;
+  padding: 50px 0;
+  background-color: $text;
+  background-image: url('images/adv-backgr.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: 1024px) {
+    background-image: url('images/adv-backgr-tablet.jpg');
+  }
+
+  @media (max-width: 768px) {
+    background-image: url('images/adv-backgr-tablet-vertical.jpg');
+  }
+
+  @media (max-width: 576px) {
+    height: 210px;
+    padding: 30px 0;
+    background-image: url('images/adv-backgr-mobile.jpg');
+    position: relative;
+    margin-bottom: 92px;
+  }
+
+  & .container {
+    height: 100%;
+
+    @media (max-width: 768px) {
+      margin-left: 36px;
+    }
+
+    @media (max-width: 576px) {
+      margin-left: 12px;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+
+    @media (max-width: 768px) {
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 576px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 6px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 120%;
+    color: #D5B986;
+    letter-spacing: -2px;
+
+    @media (max-width: 576px) {
+      font-size: 24px;
+      margin-top: 4px;
+      letter-spacing: -1px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 50px;
+    font-size: 48px;
+    line-height: 1.2;
+    color: $textAccent;
+
+    @media (max-width: 576px) {
+      font-size: 16px;
+      max-width: 180px;
+    }
+  }
+
+  &__btn {
+    padding: 20px 31px;
+
+    @media (max-width: 576px) {
+      position: absolute;
+      bottom: -92px;
+      width: 93%;
+    }
+  }
+}
