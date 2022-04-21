@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function createCatalogTag(input) {
-    const tagListItem = createElement('li', {
+    const tagListItem = createDOMElement('li', {
       classList: ['product-tags__item'],
     }, tagsList);
     if(input.name === 'filters-form-price-max') {
@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
       tagListItem.dataset.tag = input.value;
     }
 
-    const tagText = createElement('span', {
+    const tagText = createDOMElement('span', {
       classList: ['product-tags__text'],
       textContent: input.value,
     }, tagListItem);
-    const tagBtn = createElement('button', {
+    const tagBtn = createDOMElement('button', {
       classList: ['product-tags__btn', 'btn'],
     }, tagListItem);
 

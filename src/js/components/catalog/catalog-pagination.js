@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function createPaginationItem(pageNumber) {
-    const paginationListItem = createElement('li', {
+    const paginationListItem = createDOMElement('li', {
       classList: ['pagination__item'],
     }, pagination);
 
-    const paginationLink = createElement('a', {
+    const paginationLink = createDOMElement('a', {
       classList: ['pagination__link', 'btn_secondary'],
       textContent: pageNumber,
       attribute: {

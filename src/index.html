@@ -10,6 +10,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <link rel="preload" href="fonts/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="images/banner-1.jpg" as="image">
 
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="choices.min.css">
@@ -21,7 +22,7 @@
   <script defer src="inputmask.min.js"></script>
   <script defer src="just-validate.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script defer src="app.js"></script>
+  <script defer src="index.js"></script>
 </head>
 <body class="page">
   <header class="page__header header">
@@ -160,7 +161,7 @@
       <h2 class="visually-hidden">Промо предложения</h2>
       <div class="promo__swiper swiper" id="promo-swiper">
         <div class="promo__swiper-wrapper swiper-wrapper">
-          <div class="promo__swiper-slide promo__swiper-slide_one swiper-slide">
+          <div class="promo__swiper-slide promo__swiper-slide_one swiper-slide swiper-lazy" loading="lazy">
             <div class="promo__content container">
               <h3 class="promo__title">Скидка 15% 
                 <span>на первую покупку</span>
@@ -168,7 +169,7 @@
               <a class="promo__swiper-btn btn btn_primary" href="#">Получить!</a>
             </div>
           </div>
-          <div class="promo__swiper-slide promo__swiper-slide_two swiper-slide">
+          <div class="promo__swiper-slide promo__swiper-slide_two swiper-slide swiper-lazy" loading="lazy">
             <div class="promo__content container">
               <h3 class="promo__title">1000+ аксессуаров 
                 <span>для дома</span>
@@ -176,7 +177,7 @@
               <a class="promo__swiper-btn btn btn_primary" href="#">Подробнее</a>
             </div>
           </div>
-          <div class="promo__swiper-slide promo__swiper-slide_three swiper-slide">
+          <div class="promo__swiper-slide promo__swiper-slide_three swiper-slide swiper-lazy" loading="lazy">
             <div class="promo__content container">
               <h3 class="promo__title promo__title_accent">Коллекция стильного 
                 <span>и яркого текстиля</span>
@@ -552,7 +553,7 @@
 
     <section class="advertisment">
       <div class="container">
-        <div class="advertisment__content">
+        <div class="advertisment__content" loading="lazy">
           <h2 class="advertisment__title">Оксфорд 1950</h2>
           <p class="advertisment__text">Новая коллекция изысканных кресел </p>
           <a class="advertisment__btn btn btn_primary" href="#">Ознакомиться</a>
@@ -588,7 +589,7 @@
                 <source media="(max-width: 577px)" type="image/webp" srcset="images/top/top-1-mobile.webp">
                 <source media="(max-width: 577px)" srcset="images/top/top-1-mobile.png">
                 <source srcset="images/top/top-1.webp" type="image/webp">
-                <img src="images/top/top-1.png" alt="Белый диван">
+                <img src="images/top/top-1.png" alt="Белый диван" loading="lazy">
               </picture>
               <a class="product-category__link link arrow" href="catalog.html">
                 <span class="product-category__link-text">В каталог</span>
@@ -622,7 +623,7 @@
                 <source media="(max-width: 1025px)" type="image/webp" srcset="images/top/top-3-tablet.webp">
                 <source media="(max-width: 1025px)" srcset="images/top/top-3-tablet.png">
                 <source srcset="images/top/top-3.webp" type="image/webp">
-                <img src="images/top/top-3.png" alt="Двуспальная кровать">
+                <img src="images/top/top-3.png" alt="Двуспальная кровать" loading="lazy">
               </picture>
               <a class="product-category__link link arrow" href="#">
                 <span class="product-category__link-text">В каталог</span>
@@ -656,7 +657,7 @@
                 <source media="(max-width: 1025px)" type="image/webp" srcset="images/top/top-4-tablet.webp">
                 <source media="(max-width: 1025px)" srcset="images/top/top-4-tablet.png">
                 <source srcset="images/top/top-4.webp" type="image/webp">
-                <img src="images/top/top-4.png" alt="Светлый комод">
+                <img src="images/top/top-4.png" alt="Светлый комод" loading="lazy">
               </picture>
               <a class="product-category__link link arrow" href="#">
                 <span class="product-category__link-text">В каталог</span>
@@ -690,7 +691,7 @@
                 <source media="(max-width: 1025px)" type="image/webp" srcset="images/top/top-2-tablet.webp">
                 <source media="(max-width: 1025px)" srcset="images/top/top-2-tablet.png">
                 <source srcset="images/top/top-2.webp" type="image/webp">
-                <img src="images/top/top-2.png" alt="Два кресла - светлое и тёмное">
+                <img src="images/top/top-2.png" alt="Два кресла - светлое и тёмное" loading="lazy">
               </picture>
               <a class="product-category__link link arrow" href="#">
                 <span class="product-category__link-text">В каталог</span>
@@ -724,7 +725,7 @@
                 <source media="(max-width: 1025px)" type="image/webp" srcset="images/top/top-5-tablet.webp">
                 <source media="(max-width: 1025px)" srcset="images/top/top-5-tablet.png">
                 <source srcset="images/top/top-5.webp" type="image/webp">
-                <img src="images/top/top-5.png" alt="Два деревянных стула">
+                <img src="images/top/top-5.png" alt="Два деревянных стула" loading="lazy">
               </picture>
               <a class="product-category__link link arrow" href="#">
                 <span class="product-category__link-text">В каталог</span>
@@ -747,7 +748,7 @@
             <article class="useful__article useful-article">
               <picture class="useful-article__img">
                 <source srcset="images/useful/useful-1.webp" type="image/webp">
-                <img src="images/useful/useful-1.jpg" alt="Светлая комната с большим стеллажом">
+                <img src="images/useful/useful-1.jpg" alt="Светлая комната с большим стеллажом" loading="lazy">
               </picture>
               <div class="useful-article__content">
                 <h3 class="useful-article__title">И нет сомнений, что сделанные на базе интернет-аналитики выводы представляют собой не что иное?</h3>
@@ -759,7 +760,7 @@
             <article class="useful__article useful-article">
               <picture class="useful-article__img">
                 <source srcset="images/useful/useful-2.webp" type="image/webp">
-                <img src="images/useful/useful-2.jpg" alt="Комплект из кофейного столика и стула">
+                <img src="images/useful/useful-2.jpg" alt="Комплект из кофейного столика и стула" loading="lazy">
               </picture>
               <div class="useful-article__content">
                 <h3 class="useful-article__title">Как принято считать, некоторые особенности приносят несомненную пользу обществу?</h3>
@@ -771,7 +772,7 @@
             <article class="useful__article useful-article">
               <picture class="useful-article__img">
                 <source srcset="images/useful/useful-3.webp" type="image/webp">
-                <img src="images/useful/useful-3.jpg" alt="Ваза с цветочной композицией">
+                <img src="images/useful/useful-3.jpg" alt="Ваза с цветочной композицией" loading="lazy">
               </picture>
               <div class="useful-article__content">
                 <h3 class="useful-article__title">Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?</h3>
@@ -783,7 +784,7 @@
             <article class="useful__article useful-article">
               <picture class="useful-article__img">
                 <source srcset="images/useful/useful-4.webp" type="image/webp">
-                <img src="images/useful/useful-4.jpg" alt="Современная кухня">
+                <img src="images/useful/useful-4.jpg" alt="Современная кухня" loading="lazy">
               </picture>
               <div class="useful-article__content">
                 <h3 class="useful-article__title">Прежде всего, консультация с широким активом однозначно фиксирует необходимость распределения?</h3>
@@ -795,7 +796,7 @@
             <article class="useful__article useful-article">
               <picture class="useful-article__img">
                 <source srcset="images/useful/useful-5.webp" type="image/webp">
-                <img src="images/useful/useful-5.jpg" alt="Модное зеркало и комод">
+                <img src="images/useful/useful-5.jpg" alt="Модное зеркало и комод" loading="lazy">
               </picture>
               <div class="useful-article__content">
                 <h3 class="useful-article__title">Как принято считать, некоторые особенности приносят несомненную пользу обществу?</h3>
@@ -823,7 +824,7 @@
         </div>
     </section>
     
-    <section class="feedback">
+    <section class="feedback" loading="lazy">
       <div class="container">
         <h2 class="visually-hidden">Форма обратной связи</h2>
         <h3 class="feedback__title">Мы всегда вам рады!</h3>
@@ -881,21 +882,21 @@
       </a>
       <ul class="footer__socials socials">
         <li class="socials__item">
-          <a href="#" class="socials__link">
+          <a href="#" class="socials__link" aria-label="Перейти в Фейсбук">
             <svg class="socials__icon">
               <use xlink:href="images/sprite.svg#fb"></use>
             </svg>
           </a>
         </li>
         <li class="socials__item">
-          <a href="#" class="socials__link">
+          <a href="#" class="socials__link" aria-label="Перейти во Вконтакте">
             <svg class="socials__icon">
               <use xlink:href="images/sprite.svg#vk"></use>
             </svg>
           </a>
         </li>
         <li class="socials__item">
-          <a href="#" class="socials__link">
+          <a href="#" class="socials__link" aria-label="Перейти в Инстаграм">
             <svg class="socials__icon">
               <use xlink:href="images/sprite.svg#instagram"></use>
             </svg>

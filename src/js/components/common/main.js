@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // classList - классы необходимо задавать через массив,
 // attribute - атрибуты через объект,
 // где ключ - это название атрибута, а значение - значение атрибута
-function createElement(tag, options, parent = null) {
+window.createDOMElement = function(tag, options, parent = null) {
   const el = document.createElement(tag);
 
   for (const [key, value] of Object.entries(options)) {

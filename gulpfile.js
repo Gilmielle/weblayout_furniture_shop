@@ -96,17 +96,55 @@ const webpImages = () => {
     .pipe(dest('dist/images'));
 };
 
-const scripts = () => {
+const bundleJSIndex = () => {
   return src([
-      'src/js/components/**/*.js',
-      'src/js/main.js',
+      'src/js/components/common/**/*.js',
+      'src/js/components/index/**/*.js',
     ])
     .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
+    .pipe(concat('index.js'))
     .pipe(sourcemaps.write())
     .pipe(dest('dist'))
     .pipe(browserSync.stream());
-};
+}
+
+const bundleJSCatalog = () => {
+  return src([
+      'src/js/components/common/**/*.js',
+      'src/js/components/catalog/**/*.js',
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(concat('catalog.js'))
+    .pipe(sourcemaps.write())
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream());
+}
+
+const bundleJSCard = () => {
+  return src([
+      'src/js/components/common/**/*.js',
+      'src/js/components/card/**/*.js',
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(concat('card.js'))
+    .pipe(sourcemaps.write())
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream());
+}
+
+const scripts = series(bundleJSIndex, bundleJSCatalog, bundleJSCard);
+
+// const scripts = () => {
+//   return src([
+//       'src/js/components/**/*.js',
+//       'src/js/main.js',
+//     ])
+//     .pipe(sourcemaps.init())
+//     .pipe(concat('app.js'))
+//     .pipe(sourcemaps.write())
+//     .pipe(dest('dist'))
+//     .pipe(browserSync.stream());
+// };
 
 const watchFiles = () => {
   browserSync.init({
@@ -128,13 +166,13 @@ exports.scripts = scripts;
 exports.htmlMinify = htmlMinify;
 exports.webpImages = webpImages;
 
-exports.default = series(clean, parallel(resources, fonts, htmlMinify, scripts, svgSprites, images, webpImages), styles, watchFiles);
+// exports.default = series(clean, parallel(resources, fonts, htmlMinify, scripts, svgSprites, images, webpImages), styles, watchFiles);
 
 
 // Build-версия
 
 const stylesBuild = () => {
-  return src('src/styles/**/*.css')
+  return src('src/styles/**/*.scss')
     .pipe(sass({
       outputStyle: 'expanded'
     }).on('error', sass.logError))
@@ -166,12 +204,12 @@ const imagesMinify = () => {
     .pipe(dest('dist/images'));
 };
 
-const scriptsBuild = () => {
+const bundleJSIndexBuild = () => {
   return src([
-      'src/js/components/**/*.js',
-      'src/js/main.js',
+      'src/js/components/common/**/*.js',
+      'src/js/components/index/**/*.js',
     ])
-		.pipe(webpackStream({
+    .pipe(webpackStream({
 			mode: 'development',
 			output: {
 				filename: 'main.js',
@@ -196,9 +234,117 @@ const scriptsBuild = () => {
     .pipe(babel({
       presets: ['@babel/env']
     }))
-    .pipe(concat('app.js'))
+    .pipe(concat('index.js'))
     .pipe(uglify().on('error', notify.onError()))
     .pipe(dest('dist'));
-};
+}
+
+const bundleJSCatalogBuild = () => {
+  return src([
+      'src/js/components/common/**/*.js',
+      'src/js/components/catalog/**/*.js',
+    ])
+    .pipe(webpackStream({
+			mode: 'development',
+			output: {
+				filename: 'main.js',
+			},
+			module: {
+				rules: [{
+					test: /\.m?js$/,
+					exclude: /(node_modules|bower_components)/,
+					use: {
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env']
+						}
+					}
+				}]
+			},
+		}))
+    .on('error', function (err) {
+			console.error('WEBPACK ERROR', err);
+			this.emit('end'); // Don't stop the rest of the task
+		})
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(concat('catalog.js'))
+    .pipe(uglify().on('error', notify.onError()))
+    .pipe(dest('dist'));
+}
+
+const bundleJSCardBuild = () => {
+  return src([
+      'src/js/components/common/**/*.js',
+      'src/js/components/card/**/*.js',
+    ])
+    .pipe(webpackStream({
+			mode: 'development',
+			output: {
+				filename: 'main.js',
+			},
+			module: {
+				rules: [{
+					test: /\.m?js$/,
+					exclude: /(node_modules|bower_components)/,
+					use: {
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env']
+						}
+					}
+				}]
+			},
+		}))
+    .on('error', function (err) {
+			console.error('WEBPACK ERROR', err);
+			this.emit('end'); // Don't stop the rest of the task
+		})
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(concat('card.js'))
+    .pipe(uglify().on('error', notify.onError()))
+    .pipe(dest('dist'))
+}
+
+const scriptsBuild = series(bundleJSIndexBuild, bundleJSCatalogBuild, bundleJSCatalog, bundleJSCardBuild);
+
+// const scriptsBuild = () => {
+//   return src([
+//       'src/js/components/**/*.js',
+//       'src/js/main.js',
+//     ])
+// 		.pipe(webpackStream({
+// 			mode: 'development',
+// 			output: {
+// 				filename: 'main.js',
+// 			},
+// 			module: {
+// 				rules: [{
+// 					test: /\.m?js$/,
+// 					exclude: /(node_modules|bower_components)/,
+// 					use: {
+// 						loader: 'babel-loader',
+// 						options: {
+// 							presets: ['@babel/preset-env']
+// 						}
+// 					}
+// 				}]
+// 			},
+// 		}))
+//     .on('error', function (err) {
+// 			console.error('WEBPACK ERROR', err);
+// 			this.emit('end'); // Don't stop the rest of the task
+// 		})
+//     .pipe(babel({
+//       presets: ['@babel/env']
+//     }))
+//     .pipe(concat('app.js'))
+//     .pipe(uglify().on('error', notify.onError()))
+//     .pipe(dest('dist'));
+// };
 
 exports.build = series(clean, parallel(resources, fonts, htmlMinifyBuild, scriptsBuild, svgSprites, imagesMinify, webpImages), stylesBuild);
+exports.default = series(clean, parallel(resources, fonts, htmlMinifyBuild, scriptsBuild, svgSprites, imagesMinify, webpImages), stylesBuild, watchFiles);
