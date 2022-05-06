@@ -22,7 +22,17 @@
   <script defer src="inputmask.min.js"></script>
   <script defer src="just-validate.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script defer src="index.js"></script>
+  
+  <script defer src="js/common/main.js"></script>
+  <script defer src="js/common/region-select.js"></script>
+  <script defer src="js/common/site-search-select.js"></script>
+  <script defer src="js/common/burger.js"></script>
+  <script defer src="js/common/feedback-form-validation.js"></script>
+
+  <script defer src="js/index/promo-swiper.js"></script>
+  <script defer src="js/index/special-offers-swiper.js"></script>
+  <script defer src="js/index/high-rating-btn.js"></script>
+  <script defer src="js/index/useful-swiper.js"></script>
 </head>
 <body class="page">
   <header class="page__header header">
@@ -88,7 +98,7 @@
               <a href="#" class="site-navigation__link">Дисконт</a>
             </li>
             <li class="site-navigation__item">
-              <a href="#" class="site-navigation__link">Контакты</a>
+              <a href="contacts.html" class="site-navigation__link">Контакты</a>
             </li>
           </ul>
           <ul class="burger-menu__service-navigation service-navigation">
@@ -161,7 +171,7 @@
       <h2 class="visually-hidden">Промо предложения</h2>
       <div class="promo__swiper swiper" id="promo-swiper">
         <div class="promo__swiper-wrapper swiper-wrapper">
-          <div class="promo__swiper-slide promo__swiper-slide_one swiper-slide swiper-lazy" loading="lazy">
+          <div class="promo__swiper-slide promo__swiper-slide_one swiper-slide swiper-lazy">
             <div class="promo__content container">
               <h3 class="promo__title">Скидка 15% 
                 <span>на первую покупку</span>
@@ -169,7 +179,7 @@
               <a class="promo__swiper-btn btn btn_primary" href="#">Получить!</a>
             </div>
           </div>
-          <div class="promo__swiper-slide promo__swiper-slide_two swiper-slide swiper-lazy" loading="lazy">
+          <div class="promo__swiper-slide promo__swiper-slide_two swiper-slide swiper-lazy">
             <div class="promo__content container">
               <h3 class="promo__title">1000+ аксессуаров 
                 <span>для дома</span>
@@ -177,7 +187,7 @@
               <a class="promo__swiper-btn btn btn_primary" href="#">Подробнее</a>
             </div>
           </div>
-          <div class="promo__swiper-slide promo__swiper-slide_three swiper-slide swiper-lazy" loading="lazy">
+          <div class="promo__swiper-slide promo__swiper-slide_three swiper-slide swiper-lazy">
             <div class="promo__content container">
               <h3 class="promo__title promo__title_accent">Коллекция стильного 
                 <span>и яркого текстиля</span>
@@ -186,7 +196,26 @@
             </div>
           </div>
         </div>
-        <div class="promo__swiper-pagination swiper-pagination"></div>
+        <div class="promo__swiper-pagination swiper-pagination">
+          <button class="swiper-pagination__btn btn custom-bullet">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="9" class="custom-bullet__backgr"></circle>
+              <circle cx="10" cy="10" r="9" class="custom-bullet__filler"></circle>
+            </svg>
+          </button>
+          <button class="swiper-pagination__btn btn custom-bullet">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="9" class="custom-bullet__backgr"></circle>
+              <circle cx="10" cy="10" r="9" class="custom-bullet__filler"></circle>
+            </svg>
+          </button>
+          <button class="swiper-pagination__btn btn custom-bullet">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="9" class="custom-bullet__backgr"></circle>
+              <circle cx="10" cy="10" r="9" class="custom-bullet__filler"></circle>
+            </svg>
+          </button>
+        </div>
       </div>
       <div class="container">
         <a class="promo__btn btn btn_primary" href="#">Получить!</a>
@@ -553,7 +582,7 @@
 
     <section class="advertisment">
       <div class="container">
-        <div class="advertisment__content" loading="lazy">
+        <div class="advertisment__content">
           <h2 class="advertisment__title">Оксфорд 1950</h2>
           <p class="advertisment__text">Новая коллекция изысканных кресел </p>
           <a class="advertisment__btn btn btn_primary" href="#">Ознакомиться</a>
@@ -824,7 +853,7 @@
         </div>
     </section>
     
-    <section class="feedback" loading="lazy">
+    <section class="feedback">
       <div class="container">
         <h2 class="visually-hidden">Форма обратной связи</h2>
         <h3 class="feedback__title">Мы всегда вам рады!</h3>
@@ -936,7 +965,7 @@
               <a href="#" class="footer-service-navigation__link">Обратная связь</a>
             </li>
             <li class="footer-service-navigation__item">
-              <a href="#" class="footer-service-navigation__link">Контакты</a>
+              <a href="contacts.html" class="footer-service-navigation__link">Контакты</a>
             </li>
           </ul>
         </div>
@@ -944,7 +973,7 @@
           <p class="footer-service-navigation__category">Сотрудничество</p>
           <ul class="footer-service-navigation__list">
             <li class="footer-service-navigation__item">
-              <a href="#" class="footer-service-navigation__link">Поставщикам</a>
+              <a href="collaboration.html" class="footer-service-navigation__link">Поставщикам</a>
             </li>
             <li class="footer-service-navigation__item">
               <a href="#" class="footer-service-navigation__link">Оптовикам</a>

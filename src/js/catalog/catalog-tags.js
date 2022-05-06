@@ -15,10 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     checkboxLabel.addEventListener('click', function() {
       if(!checkboxInput.checked) {
-        checkboxInput.setAttribute('checked', '');
         createCatalogTag(checkboxInput);
       } else {
-        checkboxInput.removeAttribute('checked', '');
         const path = checkboxInput.value
         const target = tagsList.querySelector(`[data-tag="${path}"]`);
         target.remove();

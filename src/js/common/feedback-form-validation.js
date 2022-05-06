@@ -47,6 +47,7 @@ window.addEventListener('DOMContentLoaded', function() {
       },
 
       email: {
+        required: true,
         email: true,
       }
     },

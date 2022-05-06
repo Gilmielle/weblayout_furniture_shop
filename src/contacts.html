@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SitDownPls | Контакты</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="preload" href="fonts/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="choices.min.css">
+  <link rel="stylesheet" href="style-contacts.css">
+
+  <script defer src="choices.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <!-- <script defer src="yamaps.js"></script> -->
+  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=85131b9d-674a-48da-8917-8e0a656a00b5&lang=ru_RU"></script>
+  
+  <script defer src="js/common/main.js"></script>
+  <script defer src="js/common/region-select.js"></script>
+  <script defer src="js/common/site-search-select.js"></script>
+  <script defer src="js/common/burger.js"></script>
+
+  <script defer src="js/contacts/contacts-map.js"></script>
+</head>
+<body class="page">
+  <header class="page__header header">
+    <div class="container">
+      <div class="header__region-select region-select">
+        <span class="region-select__text">Ваш регион:</span>
+        <select class="region-select__select" name="region-select" id="region-select">
+          <option class="region-select__option" value="Москва" selected hidden>Москва</option>
+          <option class="region-select__option" value="Казань">Казань</option>
+          <option class="region-select__option" value="Уфа">Уфа</option>
+          <option class="region-select__option" value="Пермь">Пермь</option>
+        </select>
+      </div>
+      <a class="header__phone" href="tel:+74958854547">
+        <svg class="header__phone-icon">
+          <use xlink:href="images/sprite.svg#phone"></use>
+        </svg>
+        <span>+7 (495) 885-45-47</span>
+      </a>
+      <ul class="header__service-navigation service-navigation">
+        <li class="service-navigation__item">
+          <a href="#" class="service-navigation__link">О компании</a>
+        </li>
+        <li class="service-navigation__item">
+          <a href="#" class="service-navigation__link">Гарантия и возврат</a>
+        </li>
+        <li class="service-navigation__item">
+          <a href="#" class="service-navigation__link">Корпоративным клиентам</a>
+        </li>
+        <li class="service-navigation__item">
+          <a href="#" class="service-navigation__link">Дизайн-решение</a>
+        </li>
+      </ul>
+      <a class="header__logo logo" href="index.html">
+        <img class="logo__img" src="images/logo.svg" alt="Логотип">
+      </a>
+      <nav class="header__main-mavigation main-navigation">
+        <button class="main-navigation__burger btn burger" type="button" id="burger" aria-label="Бургер-меню">
+          <svg class="burger__icon">
+            <use xlink:href="images/sprite.svg#burger"></use>
+          </svg>
+        </button>
+        <div class="main-navigation__burger-menu burger-menu" id="menu">
+          <button class="burger-menu__burger-close btn burger-close" type="button" id="burger-close" aria-label="Закрыть бургер-меню">
+            <svg class="burger-close__icon">
+              <use xlink:href="images/sprite.svg#close"></use>
+            </svg>
+          </button>
+          <ul class="burger-menu__site-navigation site-navigation">
+            <li class="site-navigation__item">
+              <a href="catalog.html" class="site-navigation__link">Каталог</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="site-navigation__link">Магазины</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="site-navigation__link">Шоу-рум</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="site-navigation__link">Доставка и оплата</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="site-navigation__link">Дисконт</a>
+            </li>
+            <li class="site-navigation__item">
+              <a href="contacts.html" class="site-navigation__link">Контакты</a>
+            </li>
+          </ul>
+          <ul class="burger-menu__service-navigation service-navigation">
+            <li class="service-navigation__item">
+              <a href="#" class="service-navigation__link">О компании</a>
+            </li>
+            <li class="service-navigation__item">
+              <a href="#" class="service-navigation__link">Гарантия и возврат</a>
+            </li>
+            <li class="service-navigation__item">
+              <a href="#" class="service-navigation__link">Корпоративным клиентам</a>
+            </li>
+            <li class="service-navigation__item">
+              <a href="#" class="service-navigation__link">Дизайн-решение</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header__search">
+        <form class="header__search-form site-search" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+          <div class="site-search__input-wrapper">
+            <input class="site-search__input input" type="text" name="site-search-input" id="site-search-input" placeholder="Я хочу купить...">
+            <svg class="site-search__icon">
+              <use xlink:href="images/sprite.svg#search"></use>
+            </svg>
+            <button class="site-search__btn btn arrow" aria-label="Начать поиск">
+              <svg class="arrow__icon" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+                <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <select class="site-search__select" name="site-search-select" id="site-search-select">
+            <option class="site-search__option" value="Категория" selected hidden>Категория</option>
+            <option class="site-search__option" value="Диваны">Диваны</option>
+            <option class="site-search__option" value="Комоды">Комоды</option>
+            <option class="site-search__option" value="Кресла">Кресла</option>
+            <option class="site-search__option" value="Стулья">Стулья</option>
+            <option class="site-search__option" value="Пуфы">Пуфы</option>
+            <option class="site-search__option" value="Столы">Столы</option>
+            <option class="site-search__option" value="Кровати">Кровати</option>
+            <option class="site-search__option" value="Аксессуары">Аксессуары</option>
+            <option class="site-search__option" value="Тумбы">Тумбы</option>
+          </select>
+        </form>
+      </div>
+      <ul class="header__user-navigation user-navigation">
+        <li class="user-navigation__item">
+          <a href="#" class="user-navigation__link user-navigation__link_profile" aria-label="Войти в личный кабинет">
+            <svg class="user-navigation__icon">
+              <use xlink:href="images/sprite.svg#user"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="user-navigation__item">
+          <a href="#" class="user-navigation__link user-navigation__link_cart notification-badge" aria-label="Войти в корзину">
+            <svg class="user-navigation__icon">
+              <use xlink:href="images/sprite.svg#cart"></use>
+            </svg>
+            <span class="notification-badge__counter">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="page__main">
+    <div class="container contacts">
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="index.html">Главная</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link breadcrumbs__link_active" href="#">Контакты</a>
+        </li>
+      </ul>
+
+      <h1 class="contacts__title">Контакты</h1>
+      <form class="contacts__form contacts-form" action="https://jsonplaceholder.typicode.com/posts" method="POST" id="suggest-form">
+        <input class="contacts-form__input input" type="text" placeholder="Поиск магазина" id="suggest">
+        <button class="contacts-form__btn btn btn_primary" type="submit">Поиск</button>
+      </form>
+      <div class="contacts__map contacts-map" id="contacts-map">
+        <div class="contacts__not-found not-found" id="not-found">
+          <svg class="not-found__icon">
+            <use xlink:href="images/sprite.svg#not-found"></use>
+          </svg>
+          <p class="not-found__text">По вашему запросу ничего не нашлось</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page__footer footer">
+    <div class="container">
+      <a class="footer__logo logo" href="index.html">
+        <img class="logo__img" src="images/logo.svg" alt="Логотип">
+      </a>
+      <ul class="footer__socials socials">
+        <li class="socials__item">
+          <a href="#" class="socials__link" aria-label="Перейти в Фейсбук">
+            <svg class="socials__icon">
+              <use xlink:href="images/sprite.svg#fb"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="#" class="socials__link" aria-label="Перейти во Вконтакте">
+            <svg class="socials__icon">
+              <use xlink:href="images/sprite.svg#vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="#" class="socials__link" aria-label="Перейти в Инстаграм">
+            <svg class="socials__icon">
+              <use xlink:href="images/sprite.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <div class="footer__navigation footer-service-navigation">
+        <div class="footer-service-navigation__column">
+          <p class="footer-service-navigation__category">О нас</p>
+          <ul class="footer-service-navigation__list">
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">О компании</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Блог</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-service-navigation__column">
+          <p class="footer-service-navigation__category">Услуги</p>
+          <ul class="footer-service-navigation__list">
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Доставка</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Рассрочка и кредит</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Сборка и установка</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-service-navigation__column">
+          <p class="footer-service-navigation__category">Связь с нами</p>
+          <ul class="footer-service-navigation__list">
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Обратная связь</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="contacts.html" class="footer-service-navigation__link">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-service-navigation__column">
+          <p class="footer-service-navigation__category">Сотрудничество</p>
+          <ul class="footer-service-navigation__list">
+            <li class="footer-service-navigation__item">
+              <a href="collaboration.html" class="footer-service-navigation__link">Поставщикам</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Оптовикам</a>
+            </li>
+            <li class="footer-service-navigation__item">
+              <a href="#" class="footer-service-navigation__link">Карьера</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="footer__copyright">SDP<span>®</span> 2011-2021</p>
+  </footer>
+</body>
+</html>

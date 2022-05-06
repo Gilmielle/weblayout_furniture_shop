@@ -162,3 +162,46 @@
     }
   }
 }
+
+.swiper-pagination {
+  height: 20px;
+
+  &__btn {
+    height: 20px;
+    width: 20px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.custom-bullet {
+
+  &_active .custom-bullet__filler {
+    animation: forwards 5s animateTimer;
+  }
+
+  &_active .custom-bullet__backgr {
+    stroke: $secondary;
+  }
+
+  &__backgr,
+  &__filler {
+    stroke: $textAccent;
+    stroke-width: 2px;
+  }
+  
+  &__filler {
+    stroke-dashoffset: 62px;
+    stroke-dasharray: 62px;
+    transform-origin: center;
+    transform: rotate(-90deg);
+  }
+
+  @keyframes animateTimer {
+    to {
+      stroke-dashoffset:0
+    }
+  }
+}
